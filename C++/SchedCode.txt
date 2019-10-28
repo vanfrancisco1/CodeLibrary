@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+int main()
+{
+	// Monday Sched
+	cout << "My Class Schedule: " << "\n" << endl;
+	cout << "Monday: " << endl;
+	cout << "Readings in Philippine History" << "\t" << "7:00am-8:50am" << endl;
+	cout << "GE - Elective Filipino" << "\t" << "11:00am-12:50pm" << endl;
+	cout << "GE - Elective Filipino" << "\t" << "1:00pm-2:50pm" << "\n" << endl;
+	// Tuesday Sched
+	cout << "Tuesday: " << endl;
+	cout << "Science,Technology and Society" << "\t" << "7:00am-8:50am" << endl;
+	cout << "Physical Education" << "\t" << "9:00am-10:50am" << endl;
+	cout << "Intro to Computing" << "\t" << "12:00pm-2:40pm" << "\n" << endl;
+	// Wednesday Sched
+	cout << "Wednesday " << endl;
+	cout << "No Classes" << "\n" << endl;
+	// Thursday Sched
+	cout << "Thursday: " << endl;
+	cout << "Readings in Philippine History" << "\t" << "7:00am-8:50am" << endl;
+	cout << "Orientation to FEU" << "\t" << "11:00am-12:20pm" << endl;
+	cout << "NSTP" << "\t" << "1:00pm-5:00am" << "\n" << endl;
+	// Friday Sched
+	cout << "Friday: " << endl;
+	cout << "Readings in Philippine History" << "\t" << "7:00am-8:50am" << endl;
+	cout << "Physical Education" << "\t" << "9:00am-10:50am" << endl;
+	cout << "Intro to Computing" << "\t" << "1:00pm-3:50pm" << "\n" << endl;
+	// Saturday Sched
+	cout << "Saturday: " << endl;
+	cout << "Computer Programming (Lab)" << "\t" << "7:00am-8:50am" << endl;
+	cout << "Computer Programming (Lec)" << "\t" << "10:20am-1:00pm" << "\n" << endl;
+	
+	return 0;
+}

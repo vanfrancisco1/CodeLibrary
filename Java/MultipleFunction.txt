@@ -1,0 +1,44 @@
+import java.io.*;
+public class CodingTest 
+{
+    
+    public static void main(String[] args)throws IOException
+    //Process 
+    {
+    	
+    	BufferedReader Response = new BufferedReader (new InputStreamReader(System.in));
+    	System.out.println("First number:");
+    	double Firstnumber = Integer.parseInt(Response.readLine());
+    	System.out.println("Second number:");
+    	double Secondnumber = Integer.parseInt(Response.readLine());
+    	double answer1 = AutoAdd(Firstnumber,Secondnumber);
+    	double answer2 = AutoSubtract(Firstnumber,Secondnumber);
+    	double answer3 = AutoMultiply(Firstnumber,Secondnumber);
+    	double answer4 = AutoDivide(Firstnumber,Secondnumber);
+    	System.out.println("The Sum is:" + answer1);
+    	System.out.println("The Difference is:" + answer2);
+    	System.out.println("The Product is:" + answer3);
+    	System.out.println("The Quotient is:" + answer4);
+    }
+    //Functions
+    public static double AutoAdd(double z,double x)
+    {
+    	double Solution = z+x;
+    	return Solution;	
+    }
+    public static double AutoSubtract(double z,double x)
+    {
+    	double Solution = z-x;
+    	return Solution;
+    }
+    public static double AutoDivide(double z,double x)
+    {
+    	double Solution = z/x;
+    	return Solution;
+    }
+    public static double AutoMultiply(double z,double x)
+    {
+    	double Solution = z*x;
+    	return Solution;
+    }
+}

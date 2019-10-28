@@ -1,0 +1,20 @@
+<html>
+<body>
+<script>
+function Card(name, address, gender) {
+                this.namef = name;
+                this.addressf = address;
+                this.genderf = gender;
+
+ }
+var x = new Card("Juan Dela Cruz", "140 MLQ Street", "Male");
+function printCard() {
+  var l1 = "Name: " + x.namef + "<br>\n";
+  var l2 = "Address: " + x.addressf + "<br>\n";
+  var l3 = "Gender: " + x.genderf + "<br>\n";
+  document.write(l1, l2, l3);
+}
+</script>
+<button onclick="printCard()">Click Me</button>
+</body>
+</html>

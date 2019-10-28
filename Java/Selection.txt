@@ -1,0 +1,46 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Pack1;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author 201810437
+ */
+public class Test3 {
+
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        int num1, num2, num3, temp;
+
+        System.out.println("Insert first number: ");
+        num1 = inp.nextInt();
+        System.out.println("Insert second number: ");
+        num2 = inp.nextInt();
+        System.out.println("Insert third number");
+        num3 = inp.nextInt();
+        int[] Ar = {num1, num2, num3};
+        
+        // Selection Sort Procedure
+        for (int i = 0; i < 3; i++) {
+            for (int j = i + 1; j < 3; j++) {
+                if (Ar[i] > Ar[j]) {
+                    temp = Ar[i];
+                    Ar[i] = Ar[j];
+                    Ar[j] = temp;
+                }
+            }
+        }
+        // Display All Values Ascending 
+        System.out.println("The Numbers in Ascending Order: ");
+        for (int i = 0; i < 3; i++) {
+            System.out.println(Ar[i]);
+        }
+        // Display lowest value
+        System.out.println("The Lowest number is " + Ar[0]);
+    }
+}

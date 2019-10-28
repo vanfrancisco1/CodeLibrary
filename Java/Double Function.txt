@@ -1,0 +1,24 @@
+import java.io.*;
+public class Functions {
+    
+    public static void main(String[] args)throws IOException {
+    BufferedReader Response = new BufferedReader(new InputStreamReader (System.in));
+    System.out.println("First number:");
+    int First = Integer.parseInt(Response.readLine());
+    System.out.println("Second Number:");
+    int Second = Integer.parseInt(Response.readLine());
+    int x = AutoMultiply(First,Second);
+    int y = AutoAdd(First,Second);
+    System.out.println("The Product is:" + x);
+    System.out.println("The Sum is:" + y);
+    }
+    public static int AutoMultiply(int a,int b)
+    {int ans = a*b;
+    return ans;
+    }
+    public static int AutoAdd(int a,int b){
+    	int ans1 = a+b;
+    	return ans1;
+    }
+    
+}

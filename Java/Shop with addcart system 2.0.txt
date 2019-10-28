@@ -1,0 +1,201 @@
+import java.io.*;
+public class Shops extends Item 
+{
+    
+    public static void main(String[] args)throws IOException
+    {
+    	//DataBase!
+    	double Overall = 0;
+    	String []CartItemNames = new String[5];
+    	double []CartItemPrices = new double[5];
+    	BufferedReader Response = new BufferedReader(new InputStreamReader(System.in));
+    	for (int i = 0;i<CartItemPrices.length;i++)
+    	{
+    	System.out.println("Welcome to Akatosh's Weapon Shop");
+    	System.out.println("Dragon Blade - 7,000gil");
+    	System.out.println("Seven Swords - 20,000gil");
+    	System.out.println("Viking Blade - 8,000gil");
+    	System.out.println("Titan Greatsword - 10,000gil");
+    	System.out.print("Pick: ");
+    	String Pick = Response.readLine();
+    	System.out.println("\n");
+    	if (Pick.equalsIgnoreCase("Dragon Blade"))
+    		{
+    			System.out.println("Item Added in BuyBox");
+    			System.out.println("\n");
+    			CartItemNames[i] = DragonBladeID();
+    			CartItemPrices[i] = DragonBlade();
+    			System.out.println("Still want to add something?");
+    			System.out.print("Decision: ");
+    			String AnsAdd = Response.readLine();
+    			System.out.println("\n");
+    			if (AnsAdd.equalsIgnoreCase("y"))
+    				{
+    				continue;
+    				}
+    			else if (AnsAdd.equalsIgnoreCase("n"))
+    				{
+    				break;
+    				}
+    			else
+    				{
+    				continue;
+    				}
+    		}
+    	else if (Pick.equalsIgnoreCase("Seven Swords"))
+    		{
+    			System.out.println("Item Added in BuyBox");
+    			System.out.println("\n");
+    			CartItemNames[i] = SevenSwordsID();
+    			CartItemPrices[i] = SevenSwords();
+    			System.out.println("Still want to add something?");
+    			System.out.print("Decision: ");
+    			String AnsAdd = Response.readLine();
+    			System.out.println("\n");
+    			if (AnsAdd.equalsIgnoreCase("y"))
+    				{
+    				continue;
+    				}
+    			else if (AnsAdd.equalsIgnoreCase("n"))
+    				{
+    				break;
+    				}
+    			else
+    				{
+    				continue;
+    				}	
+    		}
+    	else if (Pick.equalsIgnoreCase("Viking Blade"))
+    		{
+    		    System.out.println("Item Added in BuyBox");
+    		    System.out.println("\n");
+    			CartItemNames[i] = VikingBladeID();
+    			CartItemPrices[i] = VikingBlade();
+    			System.out.println("Still want to add something?");
+    			System.out.print("Decision: ");
+    			String AnsAdd = Response.readLine();
+    			System.out.println("\n");
+    			if (AnsAdd.equalsIgnoreCase("y"))
+    				{
+    				continue;
+    				}
+    			else if (AnsAdd.equalsIgnoreCase("n"))
+    				{
+    				break;
+    				}
+    			else
+    				{
+    				continue;
+    				}	
+    		}
+    	else if (Pick.equalsIgnoreCase("Titan Greatsword"))
+    		{
+    			System.out.println("Item Added in BuyBox");
+    			System.out.println("\n");
+    			CartItemNames[i] = TitanGreatswordID();
+    			CartItemPrices[i] = TitanGreatsword();
+    			System.out.println("Still want to add something?");
+    			System.out.print("Decision: ");
+    			String AnsAdd = Response.readLine();
+    			System.out.println("\n");
+    			if (AnsAdd.equalsIgnoreCase("y"))
+    				{
+    				continue;
+    				}
+    			else if (AnsAdd.equalsIgnoreCase("n"))
+    				{
+    				break;
+    				}
+    			else
+    				{
+    				continue;
+    				}
+    		}
+    	else
+    		{
+    			System.out.println("Invalid Pick!");
+    		}
+    			
+    	}
+    			System.out.println("Items on BuyBox: ");
+    	for (int i=0;i<CartItemPrices.length;i++)
+    		{
+    			System.out.println(CartItemNames[i] +" --- " + CartItemPrices[i]);
+    		}
+    	for (int i=0;i<CartItemPrices.length;i++)
+    		{
+  			Overall+=CartItemPrices[i];
+    		}
+    		System.out.println("is this correct?");
+    		String Decision = Response.readLine();
+    		if (Decision.equalsIgnoreCase("y"))
+    			{
+    			System.out.println("Please put Gil Amount");
+    			double GilAmount = Double.parseDouble(Response.readLine());
+    			double Change = AutoSolve(GilAmount,Overall,tax);
+    			System.out.println("Your Change is: " + Change +"gil");
+    			System.out.println("Good Luck on the Fray! Warrior!");
+    			}
+    		
+    		 
+    }
+}
+
+
+
+
+
+Class 2:
+
+public class Item 
+{
+	//Functions!
+	static double tax  = 0.12;
+	public static double AutoSolve(double MoneyAmount,double Cost,double tax)
+	{
+		double Change = MoneyAmount-Cost-tax;
+		return Change;
+	}
+	//Equivalent and Item Names!
+	public static double DragonBlade()
+	{
+		double Price = 7000;
+		return Price;
+	}
+	public static String DragonBladeID()
+	{
+		String ID = "Dragon Blade";
+		return ID;
+	}
+	public static double SevenSwords()
+	{
+		double Price = 20000;
+		return Price;
+	}
+	public static String SevenSwordsID()
+	{
+		String ID = "Seven Swords";
+		return ID;
+	}
+	public static double VikingBlade()
+	{
+		double Price = 8000;
+		return Price;
+	}
+	public static String VikingBladeID()
+	{
+		String ID = "Viking Blade";
+		return ID;
+	}
+	public static double TitanGreatsword()
+	{
+		double Price = 10000;
+		return Price;
+	}
+	public static String TitanGreatswordID()
+	{
+		String ID = "Titan Greatsword";
+		return ID;
+	}
+	
+}

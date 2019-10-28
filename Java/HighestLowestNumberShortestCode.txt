@@ -1,0 +1,36 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package FirstPackage;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author 201810437
+ */
+public class Test3 {
+    public static void main(String[] args)
+    {
+        Scanner Input = new Scanner(System.in);
+        int num1, num2, num3, num4, num5,Large,Small;
+        System.out.println("Input first number: ");
+        num1 = Input.nextInt();
+        System.out.println("Input second number: ");
+        num2 = Input.nextInt();
+        System.out.println("Input third number: ");
+        num3 = Input.nextInt();
+        System.out.println("Input fourth number: ");
+        num4 = Input.nextInt();
+        System.out.println("Input fifth number: ");
+        num5 = Input.nextInt();
+        // 1,2,3,4,5
+        Large = Math.max(num1, Math.max(num2,Math.max(num3, Math.max(num4, num5))));
+        System.out.println("The Highest number is " + Large);
+        
+        Small = Math.min(num1, Math.min(num2, Math.min(num3, Math.min(num4, num5))));
+        System.out.println("The Smallest number is " + Small);
+    }
+}

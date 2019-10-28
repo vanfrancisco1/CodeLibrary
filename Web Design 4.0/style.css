@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap');
+body
+{
+    background-color: white;
+}
+video
+{
+    position: fixed;
+    width:1366;
+    height: 766;
+    right:0;
+    bottom:0;
+    z-index: -1;
+    margin-top: 0;
+}
+#overlay
+{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right:0;
+    bottom:0;
+    background: black;
+    opacity: .6;
+    z-index: -1;
+}
+#Logo
+{
+    height: 100px;
+    width:300px;
+    border: 0;
+    padding-top: 10px 0;
+}
+nav
+{
+    float: right;
+}
+nav ul
+{
+    margin: 0px;
+    padding: 0;
+    list-style: none;
+}
+nav li
+{
+
+    display: inline-block;
+    margin-left: 60px;
+    padding-top: 40px;
+    padding-right:35px;
+}
+a
+{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+a:hover
+{
+    color:darkgray;
+}
+#LeftBtns
+{
+    font-size:13;
+    margin: 50px;
+}
+#Titan
+{
+    color:white;
+    font-size:100;
+    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bolder;
+    padding-left: 30px;
+}
+#ds
+{
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    color: white; 
+    font-weight:lighter;
+    font-size:22;
+    padding-left: 400px;
+}
+#LearnMoreBtn
+{
+    background-color: dimgray;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+    margin-top: 1;
+    margin-left: 100;
+}
+#LearnMoreBtn:hover
+{
+   color:black;
+   background:gray;
+}
+.TournaTitle
+{
+    font-family: 'Montserrat';
+    font-size: 30;
+    font-weight: bolder;
+    color: white;
+    font-style: oblique;
+    margin-bottom: 0;
+}
+.Articles
+{
+    margin-left: 30;
+    margin-top: 40;
+    margin-right: 30;
+}
+.TournaDesc
+{
+    font-family:'Roboto','Regular';
+    font-size: 15;
+    font-weight: lighter;
+    color: white;
+    margin-top: 1;
+}
+#About
+{
+    font-family: 'Montserrat';
+    font-size: 60;
+    font-weight: bolder;
+    color: white;
+    font-style: italic;
+}
+.photo
+{
+    margin-top: 25;
+    height:70;
+    width:250;
+    margin-right: 70;
+    margin-bottom: 30;
+}
+.TournaPhoto
+{
+    height:70;
+    width:250;
+    margin-top: 1;
+    margin-bottom: 0;
+}
+.Box
+{
+    width: 250;
+    height: 300;
+    border: 1px solid white;
+    background-color: black;
+    box-sizing: border-box;
+    opacity: .6;
+    float:left;
+    font-family: 'Roboto', sans-serif;
+    color:white;
+}
+
+.row
+{
+    content: "";
+    display: table;
+}
+.Top
+{
+    width: 500;
+    height: 100;
+    border: 1px solid white;
+    background-color: black;
+    box-sizing: border-box;
+    font-family: 'Montserrat',sans-serif;
+    font-weight:bolder;
+    opacity: .6;
+    padding-top: 15;
+    color:white;
+}
+.Subscription 
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;   
+}
+#SubBtn
+{
+    background-color: dimgray;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+    margin-top: 1;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20;
+}
+#SubBtn:hover
+{
+   color:black;
+   background:gray;
+}
+
+
+

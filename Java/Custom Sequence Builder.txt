@@ -1,0 +1,35 @@
+
+package testapp;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+/**
+ *
+ * @author Van Francisco
+ */
+public class TestApp 
+{
+
+    /**
+     * @param args the command line arguments
+     * @throws java.io.IOException
+     */
+    public static void main(String[] args) throws IOException
+    {  
+        int Ans;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Set preferred number for Sequence: ");
+        int number = Integer.parseInt(br.readLine());
+        System.out.print("Set preferred gap for Sequence: ");
+        int numberGap = Integer.parseInt(br.readLine());
+        System.out.print("Set preferred limit of Sequence: ");
+        int Limit = Integer.parseInt(br.readLine());
+        System.out.println(number);
+        for(int i = 0 ; i < Limit ; i++)
+        {
+            Ans = number + numberGap;
+            System.out.println(Ans);
+            number = Ans;
+        }
+    }
+}

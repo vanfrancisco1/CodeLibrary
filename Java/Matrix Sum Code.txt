@@ -1,0 +1,33 @@
+import java.util.*;
+public class Matrix_Sum 
+{
+    
+    public static void main(String[] args) 
+    {
+    	int m,n,c,d;
+    	Scanner Response = new Scanner (System.in);
+    	System.out.println("Enter Rows and Columns");
+    	m = Response.nextInt();
+    	n = Response.nextInt();
+    	int first[][] = new int[m][n];
+    	int second[][] = new int[m][n];
+    	int sum[][] = new int[m][n];
+    	
+    	System.out.println("Enter Elements in the First Matrix");
+    	for (c = 0;c<m;c++)
+    	{
+    		for (d=0;d<n;d++)
+    		{
+    			first[c][d] = Response.nextInt();
+    		}
+    	}
+    	System.out.println("Enter Elements in the Second Matrix");
+    	for (c = 0;c<m;c++)
+    	{
+    		for (d=0;d<n;d++)
+    		{
+    			second[c][d] = Response.nextInt();
+    		}
+    	}
+    }
+}

@@ -1,0 +1,37 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/* 
+ * File:   main.cpp
+ * Author: Van Francisco
+ *
+ * Created on August 18, 2018, 1:49 PM
+ */
+
+#include <iostream>
+
+using namespace std;
+
+/*
+ * 
+ */
+int main() 
+{
+    // variables
+    float Faren,Cels,CelsiusAns,FarenAns;
+    // Input of Fahrenheit
+    cout << "Please Input desired farenheit for conversion of Celsius:";
+    cin >> Faren;
+    // formula of Fahrenheit to Celsius
+    CelsiusAns = (Faren - 32) * 5/9;
+    // Input of Celsius
+    cout << "Please Input desired Celsius for conversion of Fahrenheit:";
+    cin >> Cels;
+    // formula of Celsius to Fahrenheit
+    FarenAns = (Cels * 9/5) + 32;
+    cout << "The answer is "<< CelsiusAns << " Celsius" << endl;
+    cout << "The answer is "<< FarenAns << " Fahrenheit" << endl;
+}

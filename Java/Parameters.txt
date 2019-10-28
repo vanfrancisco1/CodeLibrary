@@ -1,0 +1,14 @@
+
+public class Functioning 
+{
+    public static void main(String[] args) 
+    {
+    int x = AutoMultiply(7,2);
+    System.out.print(x);
+    }
+    public static int AutoMultiply(int a,int b)
+    {
+    int ans = a*b;
+    return ans;
+    }
+}

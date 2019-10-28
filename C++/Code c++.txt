@@ -1,0 +1,86 @@
+#include <iostream>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+using namespace std;
+int main(int argc, char** argv) 
+{
+	// variables
+	int Money;
+	int change;
+	char Serv;
+	bool isTransaction;
+	char PartPick;
+	// Displays 
+	cout << "Welcome to Van's Stick Modding Zone: " << endl;
+	while (isTransaction == false)
+	{
+		cout << "What service do you need?" << endl;
+		cout << "-------------------------------------" << endl;
+		cout << "A. Custom Plexi Glass for Stick - 1800" << endl;
+		cout << "B. Custom game art for Stick - 6000" << endl;
+		cout << "C. Parts Replacement" << endl;
+		cout << "-------------------------------------" << endl;
+		cout << "Your Preferred Service: ";
+		cin >> Serv;
+		// Service Picks
+		// if option a is picked this code activates
+		if (Serv == 'A' || Serv == 'a')
+		{
+			cout << "Custom Plexi Glass for Stick requested!" << endl;
+			cout << "Please put money: ";
+			cin >> Money;
+			change = Money - 1800;
+			cout << "Total Change is " << change;
+			isTransaction = true;
+		}
+		// if option b is picked this code activates
+		else if (Serv == 'B' || Serv == 'b')
+		{
+			cout << "Custom game art for Stick requested!" << endl;
+			cout << "Please put money: ";
+			cin >> Money;
+			change = Money - 6000;
+			cout << "Total Change is " << change;
+			isTransaction = true;
+		}
+		// if option c is picked this code activates
+		else if (Serv == 'C' || Serv == 'c')
+		{
+			// Sub-service pick for Parts Replacement
+			cout << "Parts Replacement for stick requested!" << endl;
+			cout << "What service do you need?" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << "A. Stick Replacement - 1800" << endl;
+			cout << "B. Button Replacement - 2500" << endl;
+			cout << "-------------------------------------" << endl;
+			cout << "Your Preferred Service: ";
+			cin >> PartPick;
+			// if sub-option a is picked this code activates
+			if (PartPick == 'A' || PartPick == 'a')
+			{
+				cout << "Please put money: ";
+				cin >> Money;
+				change = Money - 1800;
+				cout << "Total Change is " << change;
+				isTransaction = true;
+			}
+			// if sub-option b is picked this code activates
+			else if (PartPick == 'B' || PartPick == 'b')
+			{
+				cout << "Please put money: ";
+				cin >> Money;
+				change = Money - 2500;
+				cout << "Total Change is " << change;
+				isTransaction = true;	
+			}
+			// if option is not available this code activates 
+			else 
+			{
+				cout << "Invalid Pick!" << endl;
+			}
+		}
+
+	}
+		
+}

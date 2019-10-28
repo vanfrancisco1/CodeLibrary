@@ -1,0 +1,82 @@
+
+package testapp;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+/**
+ *
+ * @author Van Francisco
+ */
+public class TestApp 
+{
+
+    /**
+     * @param args the command line arguments
+     * @throws java.io.IOException
+     */
+    public static void main(String[] args) throws IOException
+    {  
+        double DesiredEggSize = 0;
+        double Overall;
+        double Prices[] = {5,5.50,6};
+        String TrayOpt;
+        String SizeOption;
+        boolean TrayOptionSelected = false;
+        BufferedReader br = new BufferedReader(new InputStreamReader (System.in));
+        while(DesiredEggSize == 0)
+        {
+            System.out.println("--EGG TRAY ESTIMATOR--");
+            System.out.println("---Choose Egg Size---");
+            System.out.println("A. Small Egg - 5 Pesos");
+            System.out.println("B. Medium Egg - 5.50 Pesos");
+            System.out.println("C. Large Egg - 6 Pesos");
+            System.out.print("Desired Egg Size: ");
+            SizeOption = br.readLine();
+            if (SizeOption.equalsIgnoreCase("A"))
+            {
+                DesiredEggSize = Prices[0];
+            }
+            else if (SizeOption.equalsIgnoreCase("B"))
+            {
+                DesiredEggSize = Prices[1];
+            }
+            else if (SizeOption.equalsIgnoreCase("C"))
+            {
+                DesiredEggSize = Prices[2];
+            }
+            else
+            {
+                System.out.println("Invalid Option");
+            }
+        }
+        // Desired Tray Option
+        while(TrayOptionSelected == false)
+        {
+            System.out.println("-------Options------");
+            System.out.println("A. --Half Tray-- ");
+            System.out.println("B. --Whole Tray-- ");
+            System.out.println("-------------------");
+            System.out.print("Your Option: ");
+            TrayOpt = br.readLine();
+            if (TrayOpt.equalsIgnoreCase("A"))
+            {
+                //  EggSizePrice * TrayHeight * TrayWidth
+                TrayOptionSelected = true;
+                Overall = DesiredEggSize * 3 * 5;
+                System.out.println("Half tray ordered! the total is " + Overall);
+            }
+            else if (TrayOpt.equalsIgnoreCase("B"))
+            {
+                //  EggSizePrice * TrayHeight * TrayWidth
+                TrayOptionSelected = true;
+                Overall = DesiredEggSize * 6 * 5;
+                System.out.println("Whole tray ordered! the total is " + Overall);
+            }
+            else
+            {
+                TrayOptionSelected = false;
+                System.out.println("Invalid Option");
+            }
+        }
+    }
+}

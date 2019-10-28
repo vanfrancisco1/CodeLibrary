@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Using Expressions, Operators and Arrays in JavaScript</h1>
+<h1>Wyvern Naming Order Alphabetical: </h1>
+<p id="Demo"></p>
+<h1>Number Order Descending: </h1>
+<p id="DemoDescend"></p>
+<h1>Wyvern Array Length: </h1>
+<p id="Display Length Wyvern"></p>
+<h1>Number Array Length: </h1>
+<p id="Display Length Number"></p>
+<script type="text/javascript">
+var Wyverns = ["Rathalos","Rathian","Tigrex","Kushala Daora","Lao Shan Lung","Plesioth"];
+Wyverns.sort();
+var Numbering = ["1","2","3","4","5","6","7","8","9","10"];
+Numbering.reverse();
+document.getElementById("Demo").innerHTML = Wyverns;
+document.getElementById("DemoDescend").innerHTML = Numbering;
+document.getElementById("Display Length Wyvern").innerHTML = Wyverns.length;
+document.getElementById("Display Length Number").innerHTML = Numbering.length;
+</script>
+</body>
+</html>

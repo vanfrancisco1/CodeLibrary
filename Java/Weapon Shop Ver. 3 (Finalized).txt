@@ -1,0 +1,214 @@
+import java.io.*;
+public class WeaponShop3 {
+    
+    public static void main(String[] args) throws IOException 
+    {
+    	DataInputStream Codename = new DataInputStream (System.in);
+    	DataInputStream Rank = new DataInputStream (System.in);
+    	DataInputStream Pick = new DataInputStream (System.in);
+    	DataInputStream Decision = new DataInputStream (System.in);
+    	DataInputStream MoneyAmount = new DataInputStream (System.in);
+    	DataInputStream QuantityAmount = new DataInputStream (System.in);
+    	DataInputStream DecisionRepeat = new DataInputStream (System.in);
+    	double tax = 0.12;
+    	int a = 7000;
+    	int b = 5000;
+	int c = 3000;
+    	int d = 9000;
+	int e = 3500;
+    	int f = 4500;
+    	int g = 6000;
+    	int h = 5500;
+    	int i = 6500;
+    	int j = 10000;
+    	int k = 10000;
+    	System.out.println("Welcome Soldier! To The Diamond Dogs Weapon Shop\n");
+    	System.out.println("Please State your Codename:");
+    	String CodenameAnswer = Codename.readLine();
+    	System.out.println("Please State your Rank "+ CodenameAnswer + ":");
+    	String RankAnswer = Rank.readLine();
+    	while (true){
+    	System.out.println("Welcome " + RankAnswer + "," + CodenameAnswer + " What weapon will you have today?\n" );
+        System.out.println("A. AWP - $7000");
+        System.out.println("B. M4A4 - $5000");
+    	System.out.println("C. MAC 10 - $3000");
+    	System.out.println("D. CHEYTAC INTERVENTION M200 - $9000");
+    	System.out.println("E. UZI - $3500");
+    	System.out.println("F. FN-FAL - $4500 ");
+    	System.out.println("G. M4A1 with Hybrid Sight Silenced - $6000");
+    	System.out.println("H. AR GALIL - $5500");
+    	System.out.println("I. FAMAS - $6500");
+    	System.out.println("J. Pecheneg Machine Gun - $10000");
+    	System.out.println("K. SA80 Light Support Weapon - $10000\n");
+    	System.out.println("What is your pick " + RankAnswer +"?");
+    	String PickAnswer = Pick.readLine();
+    	// AWP
+    	if (PickAnswer.equals("a")){System.out.println("Are you sure " + RankAnswer + "?" + " (Y/N)");
+    	String DecisionAnswer = Decision.readLine();
+    	if (DecisionAnswer.equals("y")){
+    	System.out.print("Please put your money amount:");
+    	int Amount = Integer.parseInt(MoneyAmount.readLine());
+    	System.out.println("How many do you want " + RankAnswer + "?");
+    	int Quantity = Integer.parseInt(QuantityAmount.readLine());
+    	int cost = Quantity*a;
+    	double change = Amount - cost - tax;
+    	System.out.println("Your AWP will be arriving shortly " + RankAnswer + ", " + CodenameAnswer);
+    	System.out.println("Your Change is: " + change);
+    	}else if(DecisionAnswer.equals("n")){System.out.println("Transaction Cancelled");
+        }
+        // M4A4
+    	}else if(PickAnswer.equals("b")){System.out.println("Are you sure " + RankAnswer + "?" + " (Y/N)");
+    	String DecisionAnswer = Decision.readLine();
+    	if (DecisionAnswer.equals("y")){
+    	System.out.print("Please put your money amount:");
+    	int Amount = Integer.parseInt(MoneyAmount.readLine());
+    	System.out.println("How many do you want " + RankAnswer + "?");
+    	int Quantity = Integer.parseInt(QuantityAmount.readLine());
+    	int cost = Quantity*b;
+    	double change = Amount - cost - tax;
+    	System.out.println("Your M4A4 will be arriving shortly " + RankAnswer + ", " + CodenameAnswer);
+    	System.out.println("Your Change is: " + change);
+    	}else if(DecisionAnswer.equals("n")){System.out.println("Transaction Cancelled");
+        }
+        // MAC-10 
+    	}else if (PickAnswer.equals("c")){System.out.println("Are you sure " + RankAnswer + "?" + " (Y/N)");
+    	String DecisionAnswer = Decision.readLine();
+    	if (DecisionAnswer.equals("y")){
+    	System.out.print("Please put your money amount:");
+    	int Amount = Integer.parseInt(MoneyAmount.readLine());
+    	System.out.println("How many do you want " + RankAnswer + "?");
+    	int Quantity = Integer.parseInt(QuantityAmount.readLine());
+    	int cost = Quantity*c;
+    	double change = Amount - cost - tax;
+    	System.out.println("Your MAC-10 will be arriving shortly " + RankAnswer + ", " + CodenameAnswer);
+    	System.out.println("Your Change is: " + change);
+    	}else if(DecisionAnswer.equals("n")){System.out.println("Transaction Cancelled");
+        }
+        // CHEYTAC M200 
+    	}else if (PickAnswer.equals("d")){System.out.println("Are you sure " + RankAnswer + "?" + " (Y/N)");
+    	String DecisionAnswer = Decision.readLine();
+    	if (DecisionAnswer.equals("y")){
+    	System.out.print("Please put your money amount:");
+    	int Amount = Integer.parseInt(MoneyAmount.readLine());
+    	System.out.println("How many do you want " + RankAnswer + "?");
+    	int Quantity = Integer.parseInt(QuantityAmount.readLine());
+    	int cost = Quantity*d;
+    	double change = Amount - cost - tax;
+    	System.out.println("Your M200 will be arriving shortly " + RankAnswer + ", " + CodenameAnswer);
+    	System.out.println("Your Change is: " + change);
+    	}else if(DecisionAnswer.equals("n")){System.out.println("Transaction Cancelled");
+        }
+        // Uzi 
+    	}else if (PickAnswer.equals("e")){System.out.println("Are you sure " + RankAnswer + "?" + " (Y/N)");
+    	String DecisionAnswer = Decision.readLine();
+    	if (DecisionAnswer.equals("y")){
+    	System.out.print("Please put your money amount:");
+    	int Amount = Integer.parseInt(MoneyAmount.readLine());
+    	System.out.println("How many do you want " + RankAnswer + "?");
+    	int Quantity = Integer.parseInt(QuantityAmount.readLine());
+    	int cost = Quantity*e;
+    	double change = Amount - cost - tax;
+    	System.out.println("Your Uzi will be arriving shortly " + RankAnswer + ", " + CodenameAnswer);
+    	System.out.println("Your Change is: " + change);
+    	}else if(DecisionAnswer.equals("n")){System.out.println("Transaction Cancelled");
+        }
+        // FN-FAL  
+    	}else if (PickAnswer.equals("f")){System.out.println("Are you sure " + RankAnswer + "?" + " (Y/N)");
+    	String DecisionAnswer = Decision.readLine();
+    	if (DecisionAnswer.equals("y")){
+    	System.out.print("Please put your money amount:");
+    	int Amount = Integer.parseInt(MoneyAmount.readLine());
+    	System.out.println("How many do you want " + RankAnswer + "?");
+    	int Quantity = Integer.parseInt(QuantityAmount.readLine());
+    	int cost = Quantity*f;
+    	double change = Amount - cost - tax;
+    	System.out.println("Your FN-FAL will be arriving shortly " + RankAnswer + ", " + CodenameAnswer);
+    	System.out.println("Your Change is: " + change);
+    	}else if(DecisionAnswer.equals("n")){System.out.println("Transaction Cancelled");
+        }
+        // M4A1 WITH HYBRID SIGHT SILENCED 
+    	}else if (PickAnswer.equals("g")){System.out.println("Are you sure " + RankAnswer + "?" + " (Y/N)");
+    	String DecisionAnswer = Decision.readLine();
+    	if (DecisionAnswer.equals("y")){
+    	System.out.print("Please put your money amount:");
+    	int Amount = Integer.parseInt(MoneyAmount.readLine());
+    	System.out.println("How many do you want " + RankAnswer + "?");
+    	int Quantity = Integer.parseInt(QuantityAmount.readLine());
+    	int cost = Quantity*g;
+    	double change = Amount - cost - tax;
+    	System.out.println("Your M4A1 with Hybrid Sight Silenced will be arriving shortly " + RankAnswer + ", " + CodenameAnswer);
+    	System.out.println("Your Change is: " + change);
+    	}else if(DecisionAnswer.equals("n")){System.out.println("Transaction Cancelled");
+        }
+        // AR GALIL 
+    	}else if (PickAnswer.equals("h")){System.out.println("Are you sure " + RankAnswer + "?" + " (Y/N)");
+    	String DecisionAnswer = Decision.readLine();
+    	if (DecisionAnswer.equals("y")){
+    	System.out.print("Please put your money amount:");
+    	int Amount = Integer.parseInt(MoneyAmount.readLine());
+    	System.out.println("How many do you want " + RankAnswer + "?");
+    	int Quantity = Integer.parseInt(QuantityAmount.readLine());
+    	int cost = Quantity*h;
+    	double change = Amount - cost - tax;
+    	System.out.println("Your AR Galil will be arriving shortly " + RankAnswer + ", " + CodenameAnswer);
+    	System.out.println("Your Change is: " + change);
+    	}else if(DecisionAnswer.equals("n")){System.out.println("Transaction Cancelled");
+        }
+        // FAMAS 
+    	}else if (PickAnswer.equals("i")){System.out.println("Are you sure " + RankAnswer + "?" + " (Y/N)");
+    	String DecisionAnswer = Decision.readLine();
+    	if (DecisionAnswer.equals("y")){
+    	System.out.print("Please put your money amount:");
+    	int Amount = Integer.parseInt(MoneyAmount.readLine());
+    	System.out.println("How many do you want " + RankAnswer + "?");
+    	int Quantity = Integer.parseInt(QuantityAmount.readLine());
+    	int cost = Quantity*i;
+    	double change = Amount - cost - tax;
+    	System.out.println("Your Famas will be arriving shortly " + RankAnswer + ", " + CodenameAnswer);
+    	System.out.println("Your Change is: " + change);
+    	}else if(DecisionAnswer.equals("n")){System.out.println("Transaction Cancelled");
+        }
+        //PECHENEG MACHINE GUN 
+    	}else if(PickAnswer.equals("j")){System.out.println("Are you sure " + RankAnswer + "?" + " (Y/N)");
+    	String DecisionAnswer = Decision.readLine();
+    	if (DecisionAnswer.equals("y")){
+    	System.out.print("Please put your money amount:");
+    	int Amount = Integer.parseInt(MoneyAmount.readLine());
+    	System.out.println("How many do you want " + RankAnswer + "?");
+    	int Quantity = Integer.parseInt(QuantityAmount.readLine());
+    	int cost = Quantity*j;
+    	double change = Amount - cost - tax;
+    	System.out.println("Your Pecheneg Machine Gun will be arriving shortly " + RankAnswer + ", " + CodenameAnswer);
+    	System.out.println("Your Change is: " + change);
+    	}else if(DecisionAnswer.equals("n")){System.out.println("Transaction Cancelled");
+        }
+        // SA80 LIGHT MACHINE GUN 
+    	}else if (PickAnswer.equals("k")){System.out.println("Are you sure " + RankAnswer + "?" + " (Y/N)");
+    	String DecisionAnswer = Decision.readLine();
+    	if (DecisionAnswer.equals("y")){
+    	System.out.print("Please put your money amount:");
+    	int Amount = Integer.parseInt(MoneyAmount.readLine());
+    	System.out.println("How many do you want " + RankAnswer + "?");
+    	int Quantity = Integer.parseInt(QuantityAmount.readLine());
+    	int cost = Quantity*k;
+    	double change = Amount - cost - tax;
+    	System.out.println("Your SA80 Light Machine Gun will be arriving shortly " + RankAnswer + ", " + CodenameAnswer);
+    	System.out.println("Your Change is: " + change);
+    	}else if(DecisionAnswer.equals("n")){System.out.println("Transaction Cancelled");
+        }
+        // Error Input 
+    	}else {System.out.println("Invalid Input " + RankAnswer + "!");
+    	System.out.println("Transaction Cancelled");
+    	}
+    	// Repeat Option and Patent
+    	System.out.println("Do you want to buy another weapon " + RankAnswer + "?");
+    	String RepeatAnswer = DecisionRepeat.readLine();
+    	if (RepeatAnswer.equals("n")){System.out.println("Good luck in the Battlefield " + RankAnswer + ", " + CodenameAnswer+"\n\n");
+    	System.out.println("Finalized Military Weapon Shop By Van Francisco");
+    	System.out.println("Created: 8/18/2016");
+    	System.out.println("Debugged: 8/22/2016");
+    	break;}
+    	}
+    		
+    }
+}

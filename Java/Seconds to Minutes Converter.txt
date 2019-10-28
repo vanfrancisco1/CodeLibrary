@@ -1,0 +1,84 @@
+
+package testapp;
+import java.io.*;
+/**
+ *
+ * @author Van Francisco
+ */
+public class TestApp 
+{
+
+    /**
+     * @param args the command line arguments
+     * @throws java.io.IOException
+     */
+    public static void main(String[] args) throws IOException
+    {
+        boolean Decision = false;
+        double Seconds;
+        double TotalMinutes = 0;
+        String Repeat;
+        BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));
+        while (Decision == false)
+        {
+            System.out.println(" Ekko's simple Seconds to Minutes converter!");
+            System.out.println("Please Put the desired seconds " + "\n" + "- 15secs,30secs and 60secs only -");
+            Seconds = Double.parseDouble(BR.readLine());
+            if (Seconds == 60)
+            {
+                TotalMinutes += 1;
+                System.out.println("Add more seconds?");
+                Repeat = BR.readLine();
+                if (Repeat.equalsIgnoreCase("y"))
+                    {
+                    System.out.println("Acknowledged!");
+                    Decision = false;
+                    }
+                else if (Repeat.equalsIgnoreCase("n"))
+                    {
+                    System.out.println("Acknowledged!");
+                    Decision = true;
+                    }
+            }
+            else if (Seconds == 30)
+            {
+                TotalMinutes += 0.5;
+                System.out.println("Add more seconds?");
+                Repeat = BR.readLine();
+                if (Repeat.equalsIgnoreCase("y"))
+                    {
+                    System.out.println("Acknowledged!");
+                    Decision = false;
+                    }
+                else if (Repeat.equalsIgnoreCase("n"))
+                    {
+                    System.out.println("Acknowledged!");
+                    Decision = true;
+                    }
+            }
+            else if (Seconds == 15)
+            {
+                TotalMinutes += 0.25;
+                System.out.println("Add more seconds?");
+                Repeat = BR.readLine();
+                if (Repeat.equalsIgnoreCase("y"))
+                    {
+                    System.out.println("Acknowledged!");
+                    Decision = false;
+                    }
+                else if (Repeat.equalsIgnoreCase("n"))
+                    {
+                    System.out.println("Acknowledged!");
+                    Decision = true;
+                    }
+            }
+            else
+            {
+                System.out.println("Invalid Input!");
+                Decision = false;
+            }
+        }
+        System.out.println("The Total Minutes is " + TotalMinutes + " Minutes" + "\n" + "Created By: Ekko, The Boy Who Shattered Time");
+    }
+    
+}

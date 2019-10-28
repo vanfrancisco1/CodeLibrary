@@ -1,0 +1,39 @@
+package testapp;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+/**
+ *
+ * @author Van Francisco
+ */
+public class TestApp 
+{
+
+    /**
+     * @param args the command line arguments
+     * @throws java.io.IOException
+     */
+    public static void main(String[] args) throws IOException
+    {  
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Sequence Limit: ");
+        int limit = Integer.parseInt(br.readLine());
+        // Inputs in Variables
+        System.out.print("First number: ");
+        int n1 = Integer.parseInt(br.readLine());
+        System.out.print("Second number: ");
+        int n2 = Integer.parseInt(br.readLine());
+        // No value variable
+        int n3;
+        System.out.println(n1 + "\n" + n2);
+        for (int i = 0 ; i < limit ; i++)
+        {
+            /** N3's value becomes n1 + n2's answer and n1's 
+             * value becomes n2's and n2's values becomes n3's **/
+            n3 = n1 + n2;
+            System.out.println(n3);
+            n1=n2;
+            n2=n3;
+        }
+    }
+}

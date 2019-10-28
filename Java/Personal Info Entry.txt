@@ -1,0 +1,55 @@
+
+package testapp;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+/**
+ *
+ * @author Van Francisco
+ */
+public class TestApp 
+{
+
+    /**
+     * @param args the command line arguments
+     * @throws java.io.IOException
+     */
+    public static void main(String[] args) throws IOException 
+    {   
+        String FirstName;
+        String LastName;
+        String Decis;
+        int Age;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Personal Data Entry:");
+        System.out.println("First Name:");
+        FirstName = br.readLine();
+        System.out.println("Last Name:");
+        LastName = br.readLine();
+        System.out.println("Age:");
+        Age = Integer.parseInt(br.readLine());
+        while(true)
+        {
+            System.out.print("Are these following info CORRECT? Y/N" + 
+                    "\n" + "First Name: " + FirstName + 
+                    "\n" + "Last Name: " + LastName + 
+                    "\n" + "Age: " + Age + 
+                    "\n" + "Decision: ");
+            Decis = br.readLine();
+            if (Decis.equalsIgnoreCase("Y"))
+            {
+                System.out.println("Info Entered! Thank You!");
+                break;
+            }
+            else if (Decis.equalsIgnoreCase("N"))
+            {
+                System.out.println("Info Discarded");
+                break;
+            }
+            else 
+            {
+                System.out.println("Invalid Input");
+            }
+        }
+    }
+}

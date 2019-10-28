@@ -1,0 +1,46 @@
+import java.io.*;
+public class Calculator {
+    
+    public static void main(String[] args) throws IOException {
+    	DataInputStream InputNumber = new DataInputStream (System.in);
+        DataInputStream InputNumber2 = new DataInputStream (System.in);
+        DataInputStream ChoiceOp = new DataInputStream (System.in);
+        DataInputStream Repeat = new DataInputStream (System.in);
+        //Sequence
+        while (true){
+    	System.out.println("Calculator v.1");
+    	System.out.println("Please put First number");
+    	int Input1 = Integer.parseInt(InputNumber.readLine());
+    	System.out.println("Please put Second Number");
+    	int Input2 = Integer.parseInt(InputNumber2.readLine());
+    	// Operation Choices
+    	System.out.println("Which Operation do you prefer?");
+    	System.out.println("A. + ");
+    	System.out.println("B. - ");
+    	System.out.println("C. * ");
+    	System.out.println("D. / ");
+    	String ChoiceAnswer = ChoiceOp.readLine();
+    	//Core Solves
+    	if (ChoiceAnswer.equals("a")){ int Answer = Input1+Input2;
+    	System.out.println("The Answer is: " + Answer);
+    	}else if(ChoiceAnswer.equals("b")){ int Answer = Input1-Input2;
+    	System.out.println("The Answer is: " + Answer);
+    	}else if (ChoiceAnswer.equals("c")){ int Answer = Input1*Input2;
+    	System.out.println("The Answer is: " + Answer);
+    	}else if (ChoiceAnswer.equals("d")){ int Answer = Input1/Input2;
+    	System.out.println("The Answer is: " + Answer);
+    	}else {System.out.println("Error Input!");
+    	//Repeat question
+    	}System.out.println("Do you want to try again? y/n");
+    	String RepeatAnswer = Repeat.readLine();
+    	if (RepeatAnswer.equals("y")){continue;
+    	}else if (RepeatAnswer.equals("n")){break;
+    	}else{System.out.println("Error Input!");
+    	break;
+    	}
+        }
+    
+    	
+    	
+    }
+}
