@@ -83,6 +83,7 @@ DiscountAcquired;
 	{
 		P = getch();
 		
+		
 		// Delete the asterisk If the user presses delete
 		if((P==8 || P==127) && !Pass.empty())
 		{
@@ -192,13 +193,14 @@ DiscountAcquired;
 		 		system("cls");
 		 		string line;
 		 		outfile.open("Records.txt",fstream::in|fstream::out|fstream::app);
+		 		cout <<"\n\t\t"<< "Total sales are: " << TotalSales;
 				  if (outfile.is_open())
 				  {
 				  	cout <<"\n\t\t"<< "Sales Report: ";
 				    while ( outfile.good())
 				    {
 				      getline (outfile,line);
-				      cout <<"\n\t\t"<< line << std::flush;
+				      cout <<"\n\t\t"<< line << endl;
 				    }
 				    outfile.close();
 				  }
@@ -211,7 +213,6 @@ DiscountAcquired;
 		 // Transact Option
 		 else if (ActOption == "1")
 		{
-			
 			    outfile.open("Records.txt",fstream::in|fstream::out|fstream::app);
 			    for(int i = 0;i<10;i++)
 			    {
@@ -631,4 +632,3 @@ DiscountAcquired;
 		 }
 	 }
 }
-
