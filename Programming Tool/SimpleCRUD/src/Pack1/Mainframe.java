@@ -9,7 +9,9 @@ import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import net.proteanit.sql.DbUtils;
 /**
@@ -29,14 +31,19 @@ public class Mainframe extends javax.swing.JFrame {
     {
         try
         {
+            // Connection Details
             Class.forName(ClassN);
             Connection con = DriverManager.getConnection(Address,User,Pass);
             System.out.println("Connection Initiated....");
-            PreparedStatement Pst = con.prepareStatement("select * from students order by Student_Id");
+            // Query
+            PreparedStatement Pst = con.prepareStatement("select * from students order by student_id");
             ResultSet Rs = Pst.executeQuery();
+            // Set to Table
             MyTable.setModel(DbUtils.resultSetToTableModel(Rs));
+            // Close database connection
             Pst.close();
             con.close();
+            Rs.close();
         }
         catch(Exception e)
         {
@@ -68,6 +75,14 @@ public class Mainframe extends javax.swing.JFrame {
         EnterBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         StudentsTbl = new javax.swing.JTable();
+        OneBtn = new javax.swing.JButton();
+        TwoBtn = new javax.swing.JButton();
+        ThreeBtn = new javax.swing.JButton();
+        FourBtn = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        OrderTable = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        PriceLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,33 +121,86 @@ public class Mainframe extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(StudentsTbl);
 
+        OneBtn.setText("1");
+        OneBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OneBtnActionPerformed(evt);
+            }
+        });
+
+        TwoBtn.setText("2");
+
+        ThreeBtn.setText("3");
+
+        FourBtn.setText("4");
+
+        OrderTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Student Name"
+            }
+        ));
+        OrderTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OrderTableMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(OrderTable);
+
+        jLabel5.setText("Price:");
+
+        PriceLbl.setText("0.0");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Std_ID))
+                        .addComponent(PriceLbl)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FN, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LN, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(EnterBtn)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Yr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Std_ID))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(FN, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(LN, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(EnterBtn)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel4)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(Yr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(OneBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TwoBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ThreeBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FourBtn)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -140,6 +208,14 @@ public class Mainframe extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(OneBtn)
+                            .addComponent(TwoBtn)
+                            .addComponent(ThreeBtn)
+                            .addComponent(FourBtn)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
@@ -157,9 +233,14 @@ public class Mainframe extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(Yr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(EnterBtn))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(167, Short.MAX_VALUE))
+                        .addComponent(EnterBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PriceLbl))
+                .addContainerGap())
         );
 
         pack();
@@ -176,6 +257,38 @@ public class Mainframe extends javax.swing.JFrame {
         LN.setText(model.getValueAt(i,1).toString());
         FN.setText(model.getValueAt(i,2).toString());
     }//GEN-LAST:event_StudentsTblMouseClicked
+
+    private void OrderTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OrderTableMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OrderTableMouseClicked
+
+    private void OneBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OneBtnActionPerformed
+
+        try
+        {
+            // Connection Details
+            
+            int i = Integer.parseInt(OneBtn.getText());
+            Class.forName(ClassN);
+            Connection con = DriverManager.getConnection(Address,User,Pass);
+            System.out.println("Connection Initiated....");
+            // Query
+            Statement stmt = con.createStatement();
+            ResultSet Rs = stmt.executeQuery("select lastname from students where student_id = '"+i+"' ");
+            Rs.next();
+            System.out.println(Rs.getString("lastname"));
+            DefaultTableModel Ds = (DefaultTableModel) OrderTable.getModel();
+            Ds.addRow(new Object[]{Rs.getString("lastname")});
+            
+            stmt.close();
+            con.close();
+            Rs.close();
+        }
+        catch(Exception e)
+        {
+            System.out.println("Error code: " + e);
+        }
+    }//GEN-LAST:event_OneBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,14 +328,22 @@ public class Mainframe extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton EnterBtn;
     private javax.swing.JTextField FN;
+    private javax.swing.JButton FourBtn;
     private javax.swing.JTextField LN;
+    private javax.swing.JButton OneBtn;
+    private javax.swing.JTable OrderTable;
+    private javax.swing.JLabel PriceLbl;
     private javax.swing.JTextField Std_ID;
     private javax.swing.JTable StudentsTbl;
+    private javax.swing.JButton ThreeBtn;
+    private javax.swing.JButton TwoBtn;
     private javax.swing.JComboBox<String> Yr;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }
