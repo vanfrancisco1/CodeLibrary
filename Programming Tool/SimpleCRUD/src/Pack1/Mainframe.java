@@ -27,6 +27,7 @@ public class Mainframe extends javax.swing.JFrame {
            Address = "jdbc:oracle:thin:@10.22.14.215:1521:orcl",
            User = "Francisco_W22",
            Pass = "oracle";
+    double Overall = 0;
     public void Fetch(JTable MyTable)
     {
         try
@@ -142,11 +143,6 @@ public class Mainframe extends javax.swing.JFrame {
                 "Student Name"
             }
         ));
-        OrderTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                OrderTableMouseClicked(evt);
-            }
-        });
         jScrollPane2.setViewportView(OrderTable);
 
         jLabel5.setText("Price:");
@@ -258,16 +254,11 @@ public class Mainframe extends javax.swing.JFrame {
         FN.setText(model.getValueAt(i,2).toString());
     }//GEN-LAST:event_StudentsTblMouseClicked
 
-    private void OrderTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OrderTableMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_OrderTableMouseClicked
-
     private void OneBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OneBtnActionPerformed
 
         try
         {
             // Connection Details
-            
             int i = Integer.parseInt(OneBtn.getText());
             Class.forName(ClassN);
             Connection con = DriverManager.getConnection(Address,User,Pass);
@@ -276,13 +267,16 @@ public class Mainframe extends javax.swing.JFrame {
             Statement stmt = con.createStatement();
             ResultSet Rs = stmt.executeQuery("select lastname from students where student_id = '"+i+"' ");
             Rs.next();
-            System.out.println(Rs.getString("lastname"));
             DefaultTableModel Ds = (DefaultTableModel) OrderTable.getModel();
             Ds.addRow(new Object[]{Rs.getString("lastname")});
-            
+            // Close Connection
             stmt.close();
             con.close();
             Rs.close();
+            // Price set to Jlabel
+            Overall += 50;
+            PriceLbl.setText(String.valueOf(Overall));
+            
         }
         catch(Exception e)
         {
